@@ -4,9 +4,17 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Create from './Create';
 import BlogDetails from './BlogDetails';
 import NotFound from './NotFound';
+import { ThemeProvider } from '@emotion/react';
 
 function App() {
+  const theme = {
+    colors: {
+      primary: 'hotpink'
+     
+    }
+  }
   return (
+    <ThemeProvider theme={theme}> 
     <Router>
       <div className="App">
         <Navbar />
@@ -28,6 +36,7 @@ function App() {
         </div>
       </div>
     </Router>
+    </ThemeProvider>
   );
 }
 

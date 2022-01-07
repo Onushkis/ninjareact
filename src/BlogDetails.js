@@ -23,7 +23,7 @@ const BlogDetails = () => {
       { blog && (
         <article>
           {/* <h2>{ blog.title }</h2> */}
-           <Heading text={blog.title} color="lightgreen" /> 
+           <Heading text={blog.title} /> 
             <p>Written by { blog.author }</p> 
           {/* <Author  text= writte by{ blog.author } /> */}
           <div>{ blog.body }</div>

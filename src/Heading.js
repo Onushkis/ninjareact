@@ -1,31 +1,33 @@
 /** @jsxImportSource @emotion/react */
 
-import { jsx, css } from "@emotion/react";
-import { useState } from "react/cjs/react.development";
+import { jsx, css, useTheme } from "@emotion/react";
 
 
 const Heading = (props) => {
- const [stateColor, setStateColor] = useState('red');
+    const theme = useTheme();
+    
+
   const styles = css`
-    border: solid 1px red;
-    .heading {
-      font-size: "20px";
-      color: ${stateColor};
-      margin-bottom: "10px";
-      cursor: pointer;
-      &:hover {
-        color: blue;
-      }
+  .heading {
+    font-size: 20px;
+    color: ${theme.colors.primary};
+    margin-bottom: 10px;
+    cursor: pointer;
+    &:hover {
+      color: blue;
     }
+  }
   `;
-  return (
+
+   return (
     <div css={styles}>
-      <h2 className="heading" onClick={() => setStateColor(props.color)}>
+      <h2 className="heading">
           {props.text}
           
           </h2>
           </div>
   );
 };
+
 
 export default Heading;
