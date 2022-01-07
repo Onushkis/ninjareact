@@ -1,4 +1,6 @@
 import { useHistory, useParams } from "react-router-dom";
+import Author from "./Author";
+import Heading from "./Heading";
 import useFetch from "./useFetch";
 
 const BlogDetails = () => {
@@ -20,8 +22,10 @@ const BlogDetails = () => {
       { error && <div>{ error }</div> }
       { blog && (
         <article>
-          <h2>{ blog.title }</h2>
-          <p>Written by { blog.author }</p>
+          {/* <h2>{ blog.title }</h2> */}
+           <Heading text={blog.title} color="lightgreen" /> 
+            <p>Written by { blog.author }</p> 
+          {/* <Author  text= writte by{ blog.author } /> */}
           <div>{ blog.body }</div>
           <button onClick={handleClick}>delete</button>
         </article>
